@@ -1,6 +1,6 @@
 'use client';
-import { prefersReducedMotion } from '@/lib/motion';
 import { clsx } from 'clsx';
+import clsx from 'clsx';
 import React from 'react';
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & { children: React.ReactNode };

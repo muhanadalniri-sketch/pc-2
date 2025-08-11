@@ -1,5 +1,5 @@
-import withPWA from 'next-pwa';
 import runtimeCaching from 'next-pwa/cache.js';
+import runtimeCaching from 'next-pwa/cache';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -36,7 +36,6 @@ const pwa = withPWA({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: { appDir: true },
   images: { unoptimized: true }, // keep it simple for offline
 };
 

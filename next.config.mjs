@@ -1,6 +1,5 @@
-// next.config.mjs
 import withPWA from 'next-pwa';
-import baseRuntimeCaching from 'next-pwa/cache'; // ✅ اسم مختلف لتفادي التعارض
+import baseRuntimeCaching from 'next-pwa/cache.js'; // ✅ الامتداد مهم
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -9,7 +8,6 @@ const withPWAFunc = withPWA({
   disable: !isProd,
   register: true,
   skipWaiting: true,
-  // ✅ استخدمنا اسم baseRuntimeCaching بدل runtimeCaching
   runtimeCaching: [
     ...baseRuntimeCaching,
     {
@@ -52,7 +50,7 @@ const withPWAFunc = withPWA({
 const nextConfig = {
   reactStrictMode: true,
   images: { unoptimized: true },
-  // ✅ لا تحط experimental.appDir في Next 14 (تحذير كان يطلع)
+  // لا تحط experimental.appDir
 };
 
 export default withPWAFunc(nextConfig);
